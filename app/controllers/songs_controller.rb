@@ -14,7 +14,7 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
-    @user = User.all
+    @songshow = Add.select(:user_id, :song_id).distinct.where(song_id: params[:id]).where.not(user_id: current_user.id)
   end
 
 

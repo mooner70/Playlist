@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.all
-    @song = Song.all
+    @user = User.find(params[:id])
+    @songs = Add.where(user_id: params[:id])
+    # @song = Song.where(user_id: params[:id])
   end
 
 

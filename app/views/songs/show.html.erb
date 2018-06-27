@@ -36,21 +36,21 @@
           </tr>
         </thead>
         <tbody>
-          <% if @user %>
-            <% @user.each do |user| %>
+          <% if @songshow %>
+            <% @songshow.each do |song| %>
               <tr>
                 <td>
-                  <a href="/users/<%= user.id %>"> <%= user.full_name %></a>
+                  <a href="/users/<%= song.user.id %>"> <%= song.user.full_name %></a>
                 </td>
                 <td>
-
+                  <%= Add.where(song_id: song.song_id, user_id: song.user_id).count %>
                 </td>
                 
                 <% end %>
                   <% end %>
         </tbody>
       </table>
-   
+  
 
 
 

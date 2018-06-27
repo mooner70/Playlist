@@ -36,17 +36,17 @@
           </tr>
         </thead>
         <tbody>
-          <% if @song %>
-            <% @song.each do |song| %>
+          <% if @songs %>
+            <% @songs.each do |song| %>
               <tr>
                 <td>
-                    <%= song.artist %>
+                    <%= song.song.artist %>
                 </td>
                 <td>
-                  <%= song.title %>
+                    <%= song.song.title %>
                 </td>
                 <td>
-
+                <%=Add.where(song_id: song.song.id).count%>
                 </td>
 
                 <% end %>
